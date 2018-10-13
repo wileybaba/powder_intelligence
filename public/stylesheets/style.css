@@ -146,11 +146,15 @@ a:hover {
   margin-top: 30px;
 }
 
+.navbar-blue {
+	background-color: #426BF4 !important;
+}
+
 /* Media Queries */
 
 @media (min-width: 0) and (max-width: 47em) {
 	.navbar {
-		background: transparent;
+
 	}
 	.nav-items .nav-item {
 		float: none;
