@@ -4,26 +4,10 @@ var mongoose = require('mongoose');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var nodemailer = require('nodemailer');
+var chartjs = require('chartjs');
 var app = express();
 
 
-//Mongoose settings
-// const { Email } = require('./models/email');
-// var mongoose = require('mongoose');
-//
-// console.log('mongoose is ready.')
-//
-// app.use((req, res, next) => {
-//   console.log('use for mongoose callback')
-//   if (mongoose.connection.readyState) {
-//     console.log('if (mongoose.connection.readyState)')
-//     next();
-//   } else {
-//     console.log('else (mongoose.connection.readyState)')
-//     require('./mongo')().then(() => next());
-//     console.log('else (mongoose.connection.readyState)')
-//   }
-// });
 
 // mongo connection
 mongoose.set('useFindAndModify', false);
@@ -33,6 +17,9 @@ mongoose.connect("mongodb://localhost:27017/powder_intelligence");
 var db = mongoose.connection;
 //mongo error
 db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('We\'re connected!')
+});
 
 // use sessions for tracking logins
 app.use(session({

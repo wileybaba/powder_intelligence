@@ -12,10 +12,17 @@ a:hover {
 
 /* Component Styles */
 
+
 .navbar {
 	padding: 1rem 0;
 	background: rgba(0,0,0, .25);
+	background-color: transparent;
 }
+
+
+
+
+
 .lead {
 	margin-bottom: 2.5rem;
 }
@@ -24,9 +31,13 @@ a:hover {
 	min-height: calc(100vh - 34px);
 }
 .foot {
+	position: bottom;
+	left: 0;
+	bottom: 0;
+	width: 100%;
 	font-size: .85rem;
-	padding: .5rem 0;
 	color: rgba(255,255,255, .6);
+	text-align: center;
 }
 
 /* email collector style */
@@ -61,8 +72,6 @@ a:hover {
 
 /* Modifier Styles */
 
-
-
 .nav-items .nav-link {
 	margin: 0 1rem;
 }
@@ -73,6 +82,7 @@ a:hover {
 .navbar .btn {
 	text-transform: uppercase;
 	font-size: .95rem;
+	text-align: right;
 }
 .list-group {
 	color: initial;
@@ -81,6 +91,12 @@ a:hover {
 	font-size: .88rem;
 	vertical-align: top;
 	margin: 3px 0 0 4px;
+}
+
+
+#beta_form  {
+	padding-bottom: 0px;
+	margin-bottom: 40px;
 }
 
 /* Button Styles */
@@ -146,22 +162,24 @@ a:hover {
   margin-top: 30px;
 }
 
-.navbar-blue {
-	background-color: #426BF4 !important;
+#myChart {
+	margin-top: 6em;
+	background: white;
+	border-radius: 3px;
 }
+
+
+
 
 /* Media Queries */
 
 @media (min-width: 0) and (max-width: 47em) {
-	.navbar {
 
-	}
 	.nav-items .nav-item {
 		float: none;
 	}
 	.nav-items .nav-link  {
 		padding: .65rem 0;
-		display: block;
 	}
 	.nav-items {
 		padding: 1rem 0;

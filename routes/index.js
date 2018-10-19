@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
 var Email = require('../models/email');
+var Resort = require('../models/resort');
 var mid = require('../middleware')
 
 
@@ -13,6 +14,11 @@ var mid = require('../middleware')
 // GET /register-temp
 router.get('/register', mid.blockAccess, function(req, res, next) {
   return res.render('register', { title: 'Sign Up' });
+});
+
+// GET /snowchart.html
+router.get('/snowchart', function(req, res, next) {
+  return res.render('snowchart', { title: 'Chart'});
 });
 
 // GET /thankyou
@@ -151,5 +157,7 @@ router.get('/logout', function (req, res, next) {
     });
   }
 });
+
+
 
 module.exports = router;

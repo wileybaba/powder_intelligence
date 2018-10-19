@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+  </head>
+  <div class='container'>
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <script>
+      let myChart = document.getElementById('myChart').getContext('2d');
+
+      let SnowChart = new Chart(myChart, {
+          type: 'bar',
+          data: {
+            labels: ['A-Basin', 'Aspen / Snowmass', 'Cooper', 'Copper', 'Vail', 'Copper', 'Eldora'],
+            datasets: [{
+              label: 'Total Snowfall',
+              backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(50, 99, 132, 0.2)', 'rgba(100, 99, 50, 0.2)', 'rgba(25, 99, 132, 0.2)'],
+              borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+              ],
+              borderWidth: 2,
+              data: [
+                6000,
+                7500,
+                6400,
+                3000
+                ]
+              }]
+          },
+          options: {
+            responsive: true,
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true
+                }
+              }]
+            }
+          }
+        });
+  </script>
+</html>
