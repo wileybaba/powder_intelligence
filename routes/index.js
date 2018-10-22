@@ -4,6 +4,7 @@ var User = require('../models/user');
 var Email = require('../models/email');
 var Resort = require('../models/resort');
 var mid = require('../middleware')
+var WelcomeMailer = require('../mailer')
 
 
 // // GET /register  PROPER
@@ -42,6 +43,7 @@ router.post ('/', function (req, res, next) {
         return res.redirect('/thankyou');
       }
     });
+    WelcomeMailer(userEmail)
   }
 })
 
