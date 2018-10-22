@@ -42,6 +42,7 @@ router.post ('/', function (req, res, next) {
         return res.redirect('/thankyou');
       }
     });
+    console.log('TESTING THIS EMAIL SHIT')
     WelcomeMailer(userEmail);
   }
 })
