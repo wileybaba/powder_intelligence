@@ -10,6 +10,9 @@ function WelcomeMailer(userEmail) {
       user: process.env.MAILER_EMAIL,
       pass: process.env.MAILER_PASSWORD
     }
+    tls: {
+         rejectUnauthorized: false
+     }
   });
 
   var WelcomeMailerOptions = {
