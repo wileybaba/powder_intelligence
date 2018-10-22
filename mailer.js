@@ -3,6 +3,7 @@ function WelcomeMailer(userEmail) {
 
   var transporter = nodemailer.createTransport({
     service: 'gmail',
+    port: 587,
     auth: {
       user: process.env.MAILER_EMAIL,
       pass: process.env.MAILER_PASSWORD
@@ -12,7 +13,7 @@ function WelcomeMailer(userEmail) {
   var WelcomeMailerOptions = {
     from: 'Powder Intelligence',
     to: userEmail.email,
-    replyTo: 'powderintelligence@gmail.com',
+    replyTo: process.env.MAILER_EMAIL,
     subject: 'Welcome to Powder Intelligence',
     text: 'Thank you for joining the Powder Intelligence community. We are dedicated to providing accurate and timely winter weather data for winter sports enthusiasts.  Thank you for signing up for our beta.  We are currently building out our platform and look forward to sharing it with you at no cost.',
     html: '<p>Thank you for joining the Powder Intelligence community. We are dedicated to providing accurate and timely winter weather data for winter sports enthusiasts.  Thank you for signing up for our beta.  We are currently building out our platform and look forward to sharing it with you at no cost.</p>'
