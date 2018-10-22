@@ -38,12 +38,11 @@ router.post ('/', function (req, res, next) {
       if (error) {
         return next(error);
       } else {
-        console.log('Test');
         // req.session.userId = user._id;
         return res.redirect('/thankyou');
       }
     });
-    WelcomeMailer(userEmail)
+    WelcomeMailer(userEmail);
   }
 })
 

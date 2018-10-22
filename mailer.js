@@ -4,7 +4,7 @@ function WelcomeMailer(userEmail) {
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: procces.env.MAILER_EMAIL,
+      user: process.env.MAILER_EMAIL,
       pass: process.env.MAILER_PASSWORD
     }
   });
