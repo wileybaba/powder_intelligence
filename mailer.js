@@ -9,7 +9,7 @@ function WelcomeMailer(userEmail) {
     auth: {
       user: process.env.MAILER_EMAIL,
       pass: process.env.MAILER_PASSWORD
-    }
+    },
     tls: {
          rejectUnauthorized: false
      }
