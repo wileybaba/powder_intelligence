@@ -1,10 +1,10 @@
 function WelcomeMailer(userEmail) {
   var nodemailer = require('nodemailer');
-  var smtpTransport = require('nodemailer-smtp-transport');
 
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     host: 'smtp.gmail.com',
+    secure: false,
     port: 587,
     auth: {
       user: process.env.MAILER_EMAIL,
